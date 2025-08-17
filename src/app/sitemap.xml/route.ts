@@ -1,9 +1,9 @@
-import { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+
+export async function GET(): Promise<Response> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sendasignal.org'
   
-  return [
+  const sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -41,4 +41,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
   ]
+
+  return new Response(JSON.stringify(sitemap), {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
 }
