@@ -69,11 +69,6 @@ const features = [
     icon: Shield,
   },
   {
-    title: "Smart Matching",
-    description: "AI-powered suggestions based on interests.",
-    icon: Users,
-  },
-  {
     title: "Instant Connection",
     description: "Connect with people who share your interests.",
     icon: Zap,
@@ -186,7 +181,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 grid-gap-responsive">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 grid-gap-responsive">
             {features.map((feature, index) => (
               <div 
                 key={feature.title}
